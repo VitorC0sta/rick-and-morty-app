@@ -14,7 +14,9 @@ function App() {
           <CharacterOption>character</CharacterOption>
           <CharacterOption>character</CharacterOption>
         </ContainerMenu>
-        <ContainerInfo> Graphic </ContainerInfo>
+        <ContainerInfo>
+          <h1>name</h1>  
+        </ContainerInfo>
       </WrapBox>
   )
 }

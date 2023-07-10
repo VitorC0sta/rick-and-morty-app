@@ -4,5 +4,5 @@ export const WrapBox = styled.div`
     border: 10px solid rgb(129, 13, 13);
     display: flex;
     box-sizing: content-box;
-    //flex-direction: column;
+    width: 99%;
 `

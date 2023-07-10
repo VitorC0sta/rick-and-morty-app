@@ -9,4 +9,8 @@ export const CharacterOption = styled.div `
     display: flex;
     justify-content: center;
 
+    &:hover{
+        background-color: #202020ef;
+        transition: 350ms;
+    }
 `
