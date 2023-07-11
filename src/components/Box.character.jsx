@@ -7,9 +7,6 @@ export const CharacterOption = styled.div `
     align-items: center;
     display: flex;
     justify-content: center;
-
-    &:hover{
-        background-color: #202020ef;
-        transition: 350ms;
-    }
+    font-weight: 400;
+    font-size: 18px;
 `
