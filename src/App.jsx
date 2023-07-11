@@ -20,7 +20,7 @@ function App() {
       if(characterIndex === 1) setCharacter({...tempCharacter, bgcolor: '#85F217'});
       else if(characterIndex === 2) setCharacter({...tempCharacter, bgcolor: '#FF00EE'});
       else if(characterIndex === 3) setCharacter({...tempCharacter, bgcolor: '#DFFF00'});
-      else setCharacter({...tempCharacter, bgcolor: '#17EAF2'});
+      else setCharacter({...tempCharacter, bgcolor: '#17EAF2'});l
     })
   }, []); //ao carregar a página.
 
@@ -51,7 +51,7 @@ function App() {
           <ContainerInfo> 
             <BoxInfo>
               <DivData>  
-                
+                <h1>Nome do personagem</h1>
                 <h2 style={{color: character.bgcolor}}>Dados do personagem</h2>
               </DivData>
               <DivImg>
