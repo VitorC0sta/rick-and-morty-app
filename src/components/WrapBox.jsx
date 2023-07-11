@@ -1,11 +1,9 @@
 import styled from 'styled-components'
 
 export const WrapBox = styled.div`
-    @font-face {
-        font-family: ;
-        src: url();
-    }
-    font-family: ;
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+    font-family: 'Montserrat', sans-serif;
     color: #FFFFFF;
     display: flex;
     box-sizing: content-box;
