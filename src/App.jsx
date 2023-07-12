@@ -12,7 +12,7 @@ import './styles/font.css'
 function App() {
   const [characters, setCharacters] = useState(null); // Lista dos personagens conmsumidos pela API.
   const [characterIndex, setCharacterIndex] = useState(1); //Índice selecionado.
-  const [character, setCharacter] = useState({}); // Informações do personagem em relação ao índice selecionado.
+  const [character, setCharacter] = useState({}); // Informações do personagem em relação ao índice selecionado. 
 
   useEffect(() => { // Resgatando 6 personagens da API.
     api.get('/character/1,2,3,16,13,21').then((response) => {
@@ -34,6 +34,7 @@ function App() {
     }
   }, [characterIndex]); //quando alterar o índice do personagem.
 
+
   return (
       <WrapBox>
         <ContainerMenu>
@@ -52,7 +53,6 @@ function App() {
           <ContainerInfo> 
             <BoxInfo>
               <DivData>
-                {console.log(character)}
                 <h1>{character.name}</h1>
                 <table>
                   <caption style={{color: character.bgcolor}}>Dados do personagem</caption>
@@ -69,13 +69,26 @@ function App() {
                       <td style={{borderRadius:"4px 0px 0px 4px"}}> {character.status} </td>
                       <td> {character.species} </td>
                       <td> {character.gender} </td>
-                      <td style={{borderRadius:"0px 4px 4px 0px"}}> </td>
+                      {
+                        characters != null && 
+                        <>
+                          { characters.map((item,key) => {
+                              if(item.id === characterIndex)
+                              {
+                                const origin = item.origin.name.split(" ");
+                                return <td key={key}> {origin[0]} </td> 
+                              }
+                            })
+                          }
+                        </>
+                      }
+                      <td style={{borderRadius:"0px 4px 4px 0px"}}></td>
                     </tr>
                   </tbody>
                 </table>
               </DivData>
               <DivImg style={{display: "flex",justifyContent:"center", alignItems: "center"}}>
-                <img src={character.image} alt="api.img" style={{borderColor: character.bgcolor, boxShadow: character.sdwcolor }}/>
+                <img src={character.image} alt="api.img" style={{borderColor: character.bgcolor, boxShadow: `0px 0px 10px 0.25px ${character.bgcolor}` }}/>
               </DivImg>
             </BoxInfo>
             <BoxInfo>
