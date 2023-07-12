@@ -15,12 +15,12 @@ function App() {
   const [character, setCharacter] = useState({}); // Informações do personagem em relação ao índice selecionado. 
 
   useEffect(() => { // Resgatando 6 personagens da API.
-    api.get('/character/1,2,3,16,13,21').then((response) => {
+    api.get('/character/1,2,3,6,16,22').then((response) => {
       if(response.data != null) setCharacters(response.data); //validação se há algum dado de um personagem.
       const tempCharacter = response.data.find(item => item.id === characterIndex);
       if(characterIndex === 1) setCharacter({...tempCharacter, bgcolor: '#85F217'});
-      else if(characterIndex === 3) setCharacter({...tempCharacter, bgcolor: '#FF00EE'});
       else if(characterIndex === 2) setCharacter({...tempCharacter, bgcolor: '#DFFF00'});
+      else if(characterIndex === 3) setCharacter({...tempCharacter, bgcolor: '#FF00EE'});
       else setCharacter({...tempCharacter, bgcolor: '#17EAF2'});
     })
   }, []); //Ao carregar a página.
@@ -28,8 +28,8 @@ function App() {
  useEffect(() => { //Setando o nome do personagem no título principal das informações e cor dos.
     if(characters != null) {
       if(characterIndex === 1) setCharacter({...characters.find(item => item.id === characterIndex), bgcolor: '#85F217'});
-      else if(characterIndex === 3) setCharacter({...characters.find(item => item.id === characterIndex), bgcolor: '#FF00EE'});
       else if(characterIndex === 2) setCharacter({...characters.find(item => item.id === characterIndex), bgcolor: '#DFFF00'});
+      else if(characterIndex === 3) setCharacter({...characters.find(item => item.id === characterIndex), bgcolor: '#FF00EE'});
       else setCharacter({...characters.find(item => item.id === characterIndex), bgcolor: '#17EAF2'});
     }
   }, [characterIndex]); //quando alterar o índice do personagem.
@@ -53,6 +53,7 @@ function App() {
           <ContainerInfo> 
             <BoxInfo>
               <DivData>
+                {console.log(character)}
                 <h1>{character.name}</h1>
                 <table>
                   <caption style={{color: character.bgcolor}}>Dados do personagem</caption>
