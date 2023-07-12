@@ -7,7 +7,7 @@ import { DivData } from './components/Div.chardata'
 import { DivImg } from './components/Div.img'  
 import { useEffect, useState } from 'react'
 import { api } from './services/api'
-import './styles/font.css'
+import './styles/style.css'
 
 function App() {
   const [characters, setCharacters] = useState(null); // Lista dos personagens conmsumidos pela API.
