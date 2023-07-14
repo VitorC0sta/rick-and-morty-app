@@ -9,4 +9,6 @@ export const CharacterOption = styled.div `
     justify-content: center;
     font-weight: 400;
     font-size: 18px;
+    box-sizing: content-box;
+    white-space: nowrap;
 `

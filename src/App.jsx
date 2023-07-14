@@ -3,31 +3,17 @@ import { ContainerMenu } from './Container.menu'
 import { ContainerInfo } from './Container.info'
 import { CharacterOption } from './components/Box.character'
 import { BoxInfo } from './components/Box.info'
+import { BoxChart } from './components/Box.chart'
 import { DivData } from './components/Div.chardata'
 import { DivImg } from './components/Div.img'  
 import { useEffect, useState } from 'react'
 import { api } from './services/api'
-import {VictoryBar, VictoryChart, VictoryTheme} from 'victory'
 import './styles/style.css'
 
 function App() {
   const [characters, setCharacters] = useState(null); // Lista dos personagens conmsumidos pela API.
   const [characterIndex, setCharacterIndex] = useState(1); //Índice selecionado.
   const [character, setCharacter] = useState({}); // Informações do personagem em relação ao índice selecionado. 
-  const data = [
-    {month: 'Jan', apear: 1},
-    {month: 'Fev', apear: 2},
-    {month: 'Mar', apear: 3},
-    {month: 'Abr', apear: 5},
-    {month: 'Mai', apear: 1},
-    {month: 'Jun', apear: 1},
-    {month: 'Jul', apear: 3},
-    {month: 'Ago', apear: 4},
-    {month: 'Set', apear: 3},
-    {month: 'Out', apear: 2},
-    {month: 'Nov', apear: 2},
-    {month: 'Dec', apear: 3}
-  ];
 
   useEffect(() => { // Resgatando 6 personagens da API.
     api.get('/character/1,2,3,6,16,22').then((response) => {
@@ -109,19 +95,6 @@ function App() {
             </BoxInfo>
             <BoxInfo>
               <caption style={{color: character.bgcolor}}>Aparições por mês</caption>
-              {/* <VictoryChart
-                theme={VictoryTheme.material}
-                domainPadding={10}
-              >
-                <VictoryBar
-                  style={{ data: { fill: character.bgcolor } }}
-                  cornerRadius={{topLeft: ("4"), topRight: ("4")}}
-                  barWidth={58}
-                  data={data}
-                  x="month"
-                  y="apear"
-                />
-              </VictoryChart>  */}
             </BoxInfo>
           </ContainerInfo>
       </WrapBox>
