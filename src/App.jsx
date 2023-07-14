@@ -109,19 +109,7 @@ function App() {
             </BoxInfo>
             <BoxInfo>
               <caption style={{color: character.bgcolor}}>Aparições por mês</caption>
-              {/* <VictoryChart
-                theme={VictoryTheme.material}
-                domainPadding={10}
-              >
-                <VictoryBar
-                  style={{ data: { fill: character.bgcolor } }}
-                  cornerRadius={{topLeft: ("4"), topRight: ("4")}}
-                  barWidth={58}
-                  data={data}
-                  x="month"
-                  y="apear"
-                />
-              </VictoryChart>  */}
+              
             </BoxInfo>
           </ContainerInfo>
       </WrapBox>
