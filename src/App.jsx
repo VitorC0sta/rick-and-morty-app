@@ -3,7 +3,6 @@ import { ContainerMenu } from './Container.menu'
 import { ContainerInfo } from './Container.info'
 import { CharacterOption } from './components/Box.character'
 import { BoxInfo } from './components/Box.info'
-import { BoxChart } from './components/Box.chart'
 import { DivData } from './components/Div.chardata'
 import { DivImg } from './components/Div.img'  
 import { useEffect, useState } from 'react'
@@ -95,6 +94,7 @@ function App() {
             </BoxInfo>
             <BoxInfo>
               <caption style={{color: character.bgcolor}}>Aparições por mês</caption>
+              
             </BoxInfo>
           </ContainerInfo>
       </WrapBox>
